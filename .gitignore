@@ -1,0 +1,5 @@
+# Project exclude paths
+/bz-mall-admin/target/
+/bz-mall-commons/target/
+/bz-mall-generator/target/
+/bz-mall-security/target/

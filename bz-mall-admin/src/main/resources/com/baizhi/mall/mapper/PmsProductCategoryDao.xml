@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.mall.mapper.PmsProductCategoryDao">
+
+    <resultMap id="BaseResultMap" extends="com.baizhi.mall.mapper.PmsProductCategoryMapper.BaseResultMap"
+               type="com.baizhi.mall.dto.PmsProductCategoryWithChildrenItem">
+        
+        <collection property="children"
+                    columnPrefix="child_"
+                    resultMap="com.baizhi.mall.mapper.PmsProductCategoryMapper.BaseResultMap"/>
+    </resultMap>
+    <select id="listCategoryWithChildren" resultMap="BaseResultMap">
+        select
+            c1.*,
+            c2.id child_id,
+            c2.parent_id child_parent_id,
+            c2.name child_name,
+            c2.level child_level,
+            c2.product_count child_product_count,
+            c2.product_unit child_product_unit,
+            c2.nav_status child_nav_status,
+            c2.show_status child_show_status,
+            c2.sort child_sort,
+            c2.icon child_icon,
+            c2.keywords child_keywords,
+            c2.description child_description
+
+        from pms_product_category c1
+                 left join pms_product_category c2
+                           on c1.id = c2.parent_id
+        where c1.level = 0
+    </select>
+</mapper>

@@ -1,0 +1,51 @@
+server:
+  port: 8080
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countsql
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://docker2:3306/bz-mall?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 1111
+    initialization-mode: always
+
+mybatis:
+  type-aliases-package: com.baizhi.mall.entity
+  mapper-locations: classpath:com/baizhi/mall/mapper/*Mapper.xml
+
+minio:
+  endpoint: http://192.168.10.12:9090
+  accessKey: agg
+  secretKey: agg11111
+  bucketName: "bz-mall"
+
+secure:
+  ignored:
+    urls: #安全路径白名单
+      - /swagger-ui/
+      - /swagger-resources/**
+      - /**/v2/api-docs
+      - /**/*.html
+      - /**/*.js
+      - /**/*.css
+      - /**/*.png
+      - /**/*.map
+      - /favicon.ico
+      - /actuator/**
+      - /druid/**
+      - /admin/login
+      - /admin/register
+      - /admin/info
+      - /admin/logout
+      - /minio/upload
+jwt:
+  tokenHeader: Authorization #JWT存储的请求头
+  secret: bz-mall-admin-secret #JWT加解密使用的密钥
+  expiration: 604800 #JWT的超期限时间(60*60*24*7)
+  tokenHead: 'Bearer '  #JWT的标识前缀

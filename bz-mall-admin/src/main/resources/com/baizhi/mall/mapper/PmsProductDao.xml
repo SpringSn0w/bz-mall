@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baizhi.mall.mapper.PmsProductDao">
+    <resultMap id="updateInfoResultMap" type="com.baizhi.mall.dto.PmsProductResult"
+               extends="com.baizhi.mall.mapper.PmsProductMapper.BaseResultMap">
+        <result column="cateParentId" property="cateParentId"/>
+        <collection property="memberPriceList" columnPrefix="mp_"
+                    resultMap="com.baizhi.mall.mapper.PmsMemberPriceMapper.BaseResultMap"/>
+        <collection property="skuStockList" columnPrefix="ss_"
+                    resultMap="com.baizhi.mall.mapper.PmsSkuStockMapper.BaseResultMap"/>
+        <collection property="productLadderList" columnPrefix="pl_"
+                    resultMap="com.baizhi.mall.mapper.PmsProductLadderMapper.BaseResultMap"/>
+        <collection property="productFullReductionList" columnPrefix="pfr_"
+                    resultMap="com.baizhi.mall.mapper.PmsProductFullReductionMapper.BaseResultMap"/>
+        <collection property="productAttributeValueList" columnPrefix="pav_"
+                    resultMap="com.baizhi.mall.mapper.PmsProductAttributeValueMapper.BaseResultMap"/>
+        <collection property="subjectProductRelationList" columnPrefix="spr_"
+                    resultMap="com.baizhi.mall.mapper.CmsSubjectProductRelationMapper.BaseResultMap"/>
+        <collection property="prefrenceAreaProductRelationList" columnPrefix="papr_"
+                    resultMap="com.baizhi.mall.mapper.CmsPrefrenceAreaProductRelationMapper.BaseResultMap"/>
+    </resultMap>
+
+    <select id="selectUpdateInfoById" resultMap="updateInfoResultMap" >
+        select p.*,
+               pc.parent_id             cateParentId,
+               mp.id                    mp_id,
+               mp.member_level_id       mp_member_level_id,
+               mp.member_level_name     mp_member_level_name,
+               mp.member_price          mp_member_price,
+               mp.product_id            mp_product_id,
+               pl.id                    pl_id,
+               pl.count                 pl_count,
+               pl.discount              pl_discount,
+               pl.price                 pl_price,
+               pl.product_id            pl_product_id,
+               pfr.id                   pfr_id,
+               pfr.full_price           pfr_full_price,
+               pfr.product_id           pfr_product_id,
+               pfr.full_price           pfr_full_price,
+               ss.id                    ss_id,
+               ss.lock_stock            ss_lock_stock,
+               ss.low_stock             ss_low_stock,
+               ss.pic                   ss_pic,
+               ss.price                 ss_price,
+               ss.product_id            ss_product_id,
+               ss.promotion_price       ss_promotion_price,
+               ss.sale                  ss_sale,
+               ss.sku_code              ss_sku_code,
+               ss.sp_data               ss_sp_data,
+               ss.stock                 ss_stock,
+               pav.id                   pav_id,
+               pav.product_attribute_id pav_product_attribute_id,
+               pav.product_id           pav_product_id,
+               pav.`value`              pav_value,
+               spr.id                   spr_id,
+               spr.product_id           spr_product_id,
+               spr.subject_id           spr_subject_id,
+               papr.id                  papr_id,
+               papr.prefrence_area_id   papr_prefrence_area_id,
+               papr.product_id          papr_product_id
+        from pms_product p
+                 left join pms_product_category pc on p.product_category_id = pc.id
+                 left join pms_member_price mp on mp.product_id = p.id
+                 left join pms_product_ladder pl on pl.product_id = p.id
+                 left join pms_product_full_reduction pfr on pfr.product_id = p.id
+                 left join pms_sku_stock ss on ss.product_id = p.id
+                 left join pms_product_attribute_value pav on pav.product_id = p.id
+                 left join cms_subject_product_relation spr on spr.product_id = p.id
+                 left join cms_prefrence_area_product_relation papr on papr.product_id = p.id
+        where p.id = #{id};
+
+
+    </select>
+</mapper>

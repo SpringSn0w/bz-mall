@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--
+		id： Context的唯一标识，用于输出错误信息时候作为唯一标记。
+		targetRuntime：用于执行代码生成模式
+				- MyBatis3（接口中有动态的CURD和xxxByExample方法，会生成xml映射文件）
+				- MyBatis3Simple（接口中有基本的动态SQL的CRUD方法，会生成xml映射文件）
+		defaultModelType：控制实体类的生成模式
+				- hierarchical：主键生成一个XXKey类，Blob等单独生成一个类，其它简单属性在一个类中
+				- conditional：默认值，类似于hierarchical。但是只有一个主键的时候会合并所有属性生成在同一个类
+				- flat：所有内容全部生成在一个类中
+	-->
+    <context id="MySqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
+
+
+        <!-- 配置SQL语句中的前置分隔符 -->
+        <property name="beginningDelimiter" value="`"/>
+        <!-- 配置SQL语句中的后置分隔符 -->
+        <property name="endingDelimiter" value="`"/>
+        <!-- 配置生成Java文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <!-- 为模型生成序列化方法 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!-- 为生成的Java模型创建一个toString方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+
+        <!-- 为生成的Java模型使用Lombok注解 如果 使用maven插件的方式，需要将自定义插件打包后设置到插件的依赖中-->
+        <plugin type="com.baizhi.mybatis.generator.plugins.LombokPlugin">
+            <!--<property name="hasLombok" value="true"/>-->
+        </plugin>
+
+        <!-- 生成mapper.xml时覆盖原文件 -->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin"/>
+        <commentGenerator>
+            <!-- 是否阻止生成的注释 -->
+            <property name="suppressAllComments" value="true"/>
+            <!-- 是否阻止生成的注释包含时间戳 -->
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+        <!-- 配置MBG要连接的数据库信息 -->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.10.12:3306/bz-mall"
+                        userId="root"
+                        password="1111">
+            <!-- 解决mysql驱动升级到8.0后不生成指定数据库代码的问题 -->
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <!-- 整数是否强制使用BigDecimal -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 用于控制实体类的生成 -->
+        <javaModelGenerator targetPackage="com.baizhi.mall.entity"
+                            targetProject="src\main\java">
+            <!--不再生成getter setter-->
+            <property name="immutable" value="false"/>
+            <!-- 是否允许根据数据库名生成和库同名的子包-->
+            <property name="enableSubPackages" value="false"/>
+        </javaModelGenerator>
+
+        <!-- 用于控制Mapper.xml文件的生成 -->
+        <sqlMapGenerator targetPackage="com.baizhi.mall.mapper"
+                         targetProject="src\main\resources"/>
+
+        <!-- 用于控制Mapper接口的生成 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.baizhi.mall.mapper"
+                             targetProject="src\main\java"/>
+
+        <!-- 配置需要生成的表，生成全部表tableName设为% -->
+        <table tableName="%">
+            <!-- 用来指定主键生成策略 -->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!-- searchString中正则命中的列名部分会替换为replaceString
+			<columnRenamingRule searchString="^CUST_" replaceString=""/>
+			-->
+        </table>
+
+    </context>
+</generatorConfiguration>

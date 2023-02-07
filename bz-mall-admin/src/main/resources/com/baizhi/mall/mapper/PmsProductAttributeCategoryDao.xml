@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baizhi.mall.mapper.PmsProductAttributeCategoryDao">
+  <resultMap id="BaseResultMap"
+             type="com.baizhi.mall.dto.ProductAttributeCategoryItem"
+             extends="com.baizhi.mall.mapper.PmsProductAttributeCategoryMapper.BaseResultMap">
+    <collection property="productAttributes"
+                columnPrefix="attr_"
+                resultMap="com.baizhi.mall.mapper.PmsProductAttributeMapper.BaseResultMap"
+                ofType="com.baizhi.mall.entity.PmsProductAttribute">
+    </collection>
+  </resultMap>
+
+  <select id="listPmsProductAttributeCategoryWithAttribute" resultMap="BaseResultMap">
+    select pac.*,
+           pa.id attr_id,
+           pa.product_attribute_category_id attr_product_attribute_category_id,
+           pa.name attr_name,
+           pa.select_type attr_select_type,
+           pa.input_type attr_input_type,
+           pa.input_list attr_input_list,
+           pa.sort attr_sort,
+           pa.filter_type attr_filter_type,
+           pa.search_type attr_search_type,
+           pa.related_status attr_related_status,
+           pa.hand_add_status attr_hand_add_status,
+           pa.type attr_type
+    from pms_product_attribute_category pac
+    left join pms_product_attribute pa
+    on pac.id = pa.product_attribute_category_id
+    where pa.type = 1
+  </select>
+</mapper>
