@@ -1,6 +1,7 @@
 # Project exclude paths
 */target/
 .idea
+/bz-mall-test/
 # Compiled class file
 *.class
 .idea/

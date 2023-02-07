@@ -4,9 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77e595c3-c0cd-4673-941d-ac05bafc2935" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="77e595c3-c0cd-4673-941d-ac05bafc2935" name="Changes" comment="更新">
+      <change afterPath="$PROJECT_DIR$/bz-mall-admin/src/main/java/com/baizhi/mall/config/MyDatabaseConnectionConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bz-mall-admin/src/main/java/com/baizhi/mall/config/endpoint/DatabaseConnectionEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bz-mall-admin/src/main/java/com/baizhi/mall/config/endpoint/WwwHealthIndicator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bz-mall-admin/src/main/resources/application-endpoints.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bz-mall-generator/src/main/java/com/baizhi/AdminApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bz-mall-generator/src/main/resources/application.ymal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bz-mall-test/src/main/java/com/baizhi/mall/endpoints/DatabaseConnectionEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bz-mall-admin/bz-mall-admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bz-mall-admin/bz-mall-admin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bz-mall-admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bz-mall-admin/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bz-mall-commons/bz-mall-commons.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bz-mall-commons/bz-mall-commons.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bz-mall-commons/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bz-mall-commons/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bz-mall-generator/bz-mall-generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bz-mall-generator/bz-mall-generator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bz-mall-generator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bz-mall-generator/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bz-mall-security/bz-mall-security.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bz-mall-security/bz-mall-security.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bz-mall-security/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bz-mall-security/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bz-mall-test/bz-mall-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bz-mall-test/bz-mall-test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bz-mall-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bz-mall-test/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,33 +84,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/JavaProjects/Redis/redis",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.1908046",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "e06d758e689512a9e5841c21f048740a"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaProjects/Redis/redis&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.1908046&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;e06d758e689512a9e5841c21f048740a&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "module",
-      "directory"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;module&quot;,
+      &quot;directory&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.baizhi.mall.service.impl" />
@@ -114,11 +131,11 @@
       <recent name="com.baizhi.mall" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.baizhi.mall.config" />
       <recent name="com.baizhi.mall.security.config" />
       <recent name="com.baizhi.mall.security.component" />
       <recent name="com.baizhi.mall.security" />
       <recent name="com.baizhi.mall.vo" />
-      <recent name="cn.baizhi.vo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -128,7 +145,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AdminApplication">
+  <component name="RunManager" selected="Spring Boot.AdminApplication (1)">
     <configuration name="AdminApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.baizhi.mall.AdminApplication" />
       <module name="bz-mall-admin" />
@@ -166,6 +183,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AdminApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" />
+      <module name="bz-mall-generator" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.baizhi.AdminApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.baizhi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -183,31 +214,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="bz-mall-security" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.baizhi.mall.SecurityApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.baizhi.mall.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.com.baizhi.mybatis.generator.Generator" />
       <item itemvalue="Application.AdminApplication" />
       <item itemvalue="JUnit.TestUpload.testUpload" />
-      <item itemvalue="Spring Boot.SecurityApplication" />
+      <item itemvalue="Spring Boot.AdminApplication (1)" />
       <item itemvalue="Spring Boot.AdminApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.AdminApplication (1)" />
         <item itemvalue="Spring Boot.AdminApplication" />
         <item itemvalue="Application.AdminApplication" />
-        <item itemvalue="Spring Boot.SecurityApplication" />
         <item itemvalue="Application.com.baizhi.mybatis.generator.Generator" />
         <item itemvalue="JUnit.TestUpload.testUpload" />
       </list>
@@ -279,8 +297,17 @@
       <workItem from="1675699584957" duration="522000" />
       <workItem from="1675731685159" duration="8319000" />
       <workItem from="1675752621399" duration="2354000" />
-      <workItem from="1675756453795" duration="683000" />
+      <workItem from="1675756453795" duration="4005000" />
+      <workItem from="1675767977843" duration="4129000" />
     </task>
+    <task id="LOCAL-00001" summary="更新">
+      <created>1675757408060</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675757408060</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +328,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/bz-mall-admin-web" />
     </ignored-roots>
+    <MESSAGE value="更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

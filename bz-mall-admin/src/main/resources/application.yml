@@ -14,6 +14,8 @@ spring:
     username: root
     password: 1111
     initialization-mode: always
+  profiles:
+    active: endpoints
 
 mybatis:
   type-aliases-package: com.baizhi.mall.entity

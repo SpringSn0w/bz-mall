@@ -1,0 +1,22 @@
+management:
+  endpoints:
+    # 默认开启端点
+    enabled-by-default: true
+    web:
+      exposure:
+        # 暴露所有端点
+        include: "*"
+        # 排除端点
+        exclude: beans
+  endpoint:
+    health:
+      # 开启health端点
+      enabled: true
+      # 详细信息
+      show-details: always
+    beans:
+      # beans虽然开启了，但是被排除了没有暴露也无法访问
+      enabled: true
+    shutdown:
+      # 开启shutdown端点
+      enabled: true
