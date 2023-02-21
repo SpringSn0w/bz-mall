@@ -23,8 +23,8 @@ mybatis:
 
 minio:
   endpoint: http://192.168.10.12:9090
-  accessKey: agg
-  secretKey: agg11111
+  accessKey: admin
+  secretKey: admin1234565
   bucketName: "bz-mall"
 
 secure:

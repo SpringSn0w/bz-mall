@@ -10,7 +10,7 @@ services:
       - "9090:9090"
       - "50000:50000"
     environment:
-      - "MINIO_ACCESS_KEY=admin"
-      - "MINIO_SECRET_KEY=admin1111"
+      - "MINIO_ACCESS_KEY=agg"
+      - "MINIO_SECRET_KEY=agg12345"
     restart: always
     command: server /data --console-address ":50000" --address ":9090"
